@@ -8,14 +8,14 @@ Created on Tue Aug  2 18:17:25 2022
 
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from flask_ngrok import run_with_ngrok
+
 import pickle
 
 
 app = Flask(__name__)
 model_rf = pickle.load(open('randomforestentropymodel.pkl','rb')) 
 model_gb = pickle.load(open('gaussianmodel.pkl','rb'))
-run_with_ngrok(app)
+
 
 @app.route('/')
 def home():
